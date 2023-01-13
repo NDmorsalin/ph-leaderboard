@@ -1,0 +1,168 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+ * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       text-decoration: none;
+       list-style-type: none;
+       font-family: 'Poppins', sans-serif;
+ }
+
+ /* base style */
+
+ body {
+       background-color: #9F9F9F;
+ }
+
+ /* ---------------
+common style
+------------------------*/
+
+ .container {
+       padding: 0 2rem;
+ }
+
+ /* ------------------------
+nav bar
+-----------------------------*/
+ .nav {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       position: relative;
+ }
+
+ .header {
+       background-color: #562EFF;
+       width: 100%;
+       padding: 1rem 0;
+ }
+
+ .logo {
+       display: flex;
+       align-items: center;
+       gap: 10px;
+ }
+
+ .logo span {
+       font-size: 24px;
+       color: #fff;
+       font-weight: 500;
+ }
+
+ .logo img {
+       width: 40px;
+       height: 50px;
+ }
+
+
+ .nav-bar {
+       display: flex;
+       align-items: center;
+       gap: 1rem;
+ }
+
+ .nav-items-container {
+       display: none;
+       align-items: center;
+       gap: 2rem;
+
+ }
+
+ .nav-item {
+       color: #fff;
+ }
+
+
+
+
+ /* toggle btn */
+ .btn {
+      margin-left: 1rem;
+ }
+
+
+ #togol-btn{
+      appearance:  none;
+ }
+
+ #togol-btn:checked+.nav-items-container {
+       display: block;
+       position: absolute;
+       top: calc(100% + 1rem);
+       /* for 1rem pading of top and botom of .header  */
+       width: calc(100% - 4rem);
+       left: 50%;
+       transform: translateX(-50%);
+       background-color: #562;
+ }
+
+ /* media quary */
+
+ /* tablet */
+ @media screen and (min-width:567px) and (max-width:960px) {
+       .container {
+             width: 560px;
+             padding: 0;
+             margin: 0 auto;
+       }
+
+
+       .nav-items-container {
+             display: flex;
+             gap: 1rem;
+       }
+
+
+
+       .btn {
+             display: none;
+       }
+
+       #togol-btn:checked+.nav-items-container {
+             display: flex;
+             position: static;
+             top: unset;
+             /* for 1rem pading of top and botom of .header  */
+             width: auto;
+             left: unset;
+             transform: unset;
+             background-color: unset;
+       }
+ }
+
+
+ /* desktop */
+
+
+ @media screen and (min-width:961px) {
+       .container {
+             width: 870px;
+             padding: 0;
+             margin: 0 auto;
+       }
+
+       .nav-bar {
+            gap: 2rem;
+      }
+     
+       .nav-items-container {
+             display: flex;
+       }
+
+       #togol-btn:checked+.nav-items-container {
+            display: flex;
+            position: static;
+            top: unset;
+            /* for 1rem pading of top and botom of .header  */
+            width: auto;
+            left: unset;
+            transform: unset;
+            background-color: unset;
+      }
+       .btn {
+             display: none;
+       }
+
+ }
